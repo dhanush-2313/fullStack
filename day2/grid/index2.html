@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 70%;
+            display: grid;
+            gap: 10px;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .grid-item{
+            display: flex;
+            width: auto;
+            height: 100px;
+            background-color: lightblue;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 10px;
+            gap: 20px;   
+        }
+
+        .grid-item:hover{
+            background-color: rgb(239, 239, 241);
+            cursor: pointer;
+        }
+
+        .other{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="grid-item">
+            <div class="imagee">
+                <img style="height: 50%;" src="https://code.visualstudio.com/assets/images/python-extension.png" alt="">
+            </div>
+            <div class="other">
+                <b>Python</b>
+                <p>Add rich language support for python</p>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="imagee">
+                <img style="height: 50%;" src="https://code.visualstudio.com/assets/images/stripe-extension.png" alt="">
+            </div>
+            <div class="other">
+                <b>Stripe</b>
+                <p>Build, test, and use Stripe inside your editor</p>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="imagee">
+                <img style="height: 50%;" src="https://code.visualstudio.com/assets/images/c-extension.png" alt="">
+            </div>
+            <div class="other">
+                <b>C/C++</b>
+                <p>Adds rich language support for C/C++</p>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="imagee">
+                <img style="height: 50%;" src="https://code.visualstudio.com/assets/images/jupyter-extension.png" alt="">
+            </div>
+            <div class="other">
+                <b>Jupyter</b>
+                <p>Language support for Jupyter Notebooks</p>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="imagee">
+                <img style="height: 50%;" src="https://code.visualstudio.com/assets/images/gitlens-extension.png" alt="">
+            </div>
+            <div class="other">
+                <b>GitLens</b>
+                <p>Supercharge your Git experience</p>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="imagee">
+                <img style="height: 50%;" src="https://code.visualstudio.com/assets/images/cs-dev-kit-extension.png" alt="">
+            </div>
+            <div class="other">
+                <b>C# Dev Kit</b>
+                <p>Powerful tools for your C# environment</p>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="imagee">
+                <img style="height: 50%;" src="https://code.visualstudio.com/assets/images/mongodb-extension.png" alt="">
+            </div>
+            <div class="other">
+                <b>MongoDB</b>
+                <p>Extension for the @MongoDB agent</p>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="imagee">
+                <img style="height: 50%;" src="https://code.visualstudio.com/assets/images/azure.png" alt="">
+            </div>
+            <div class="other">
+                <b>GitHub Copilot for Azure</b>
+                <p>Streamline the process of developing for Azure</p>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="imagee">
+                <img style="height: 50%;" src="https://code.visualstudio.com/assets/images/remote-extension.png" alt="">
+            </div>
+            <div class="other">
+                <b>Remote Development</b>
+                <p>Open folders in a container on a remote machine</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

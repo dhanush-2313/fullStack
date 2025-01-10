@@ -1,0 +1,58 @@
+.textcolorexample{
+    color: blue;
+    text-decoration:dotted;
+}
+
+.backgroundcolorexample{
+    background-color: yellow;
+}
+
+.wordspacingexample{
+    word-spacing: 100px;
+}
+
+.alignmentexample{
+    text-align: center;
+}
+
+.directionexample{
+    direction: rtl;
+}
+
+.transformationexample{
+    text-transform: uppercase;
+}
+
+.lineheightexample{
+    line-height: 2;
+}
+
+.shadowexample{
+    text-shadow: 2px 2px 5px red;
+}
+
+.bgimg{
+    background-image: url("https://tse1.mm.bing.net/th?id=OIP.ejDZICjfvwLiYu5glZ21ZgHaLH&pid=Api&P=0&h=180");
+    height: 100px;
+    width: 500px;
+    background-repeat: no-repeat;
+    color: red;
+    background-size: contain;
+}
+
+.first{
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    background-color: red;
+    z-index: 3;
+}
+
+.second{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background-color: blue;
+    z-index: 2;
+}
+

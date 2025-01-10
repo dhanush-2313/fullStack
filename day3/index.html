@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="firstid" style="display: inline;">Count:</h1>
+    <h1 style="display: inline;" class="counterr">0</h1> <br>
+    <button onclick="handleClick()">Start</button>
+    <button onclick="handleStop()">Stop</button>
+    <button onclick="reset()">Reset</button>
+    <script>
+        let timer;
+        let count = 0;
+
+        const handleClick = async () => {
+            const element = document.querySelector('.counterr');
+            timer = setInterval(() => {
+                element.innerText = count;
+                count++;
+            }, 1000);
+        }
+
+        const handleStop = async() =>{
+            clearInterval(timer);
+        }
+
+        const reset = () =>{
+            document.querySelector('.counterr').innerText = 0;
+        }
+    </script>
+</body>
+</html>
