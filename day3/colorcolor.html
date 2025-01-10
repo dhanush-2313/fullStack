@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box"></div>
+    <br>
+    <input type="color" id="inp" onchange="changeColor()">
+    <script>
+        const box = document.querySelector('.box');
+        const inp = document.querySelector('#inp');
+        const changeColor = () => {
+            box.style.backgroundColor = inp.value;
+        }
+    </script>
+</body>
+</html>

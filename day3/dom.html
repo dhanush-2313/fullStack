@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="bruhh">hello world</p>
+    <button class="buttonn" onclick="changeColor()">Dark mode</button>
+</body>
+<script>    
+    const p = document.querySelector('.bruhh');
+    const changeColor = () => {
+        document.body.style.backgroundColor = document.body.style.backgroundColor === 'black' ? 'white' : 'black';
+        document.body.style.color = document.body.style.backgroundColor === 'black' ? 'white' : 'black';
+        document.body.querySelector(".buttonn").innerText = document.body.style.backgroundColor === 'black' ? 'Light mode' : 'Dark mode';
+    }   
+</script>
+</html>
