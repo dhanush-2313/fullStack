@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input" placeholder="Enter todo">
+    <button id="add">Add</button>
+    <ol id="list" type="1"></ol>
+    <script>
+        const input = document.querySelector('#input');
+        const addBtn = document.querySelector('#add');
+        const list = document.querySelector('#list');
+        addBtn.addEventListener('click', () => {
+            const li = document.createElement('li');
+            const deletebtn = document.createElement('button');
+            li.innerText = input.value;
+            deletebtn.innerText = 'Delete';
+            list.appendChild(li);
+            li.appendChild(deletebtn);
+            deletebtn.addEventListener('click', () => {
+                li.remove();
+            });
+            input.value = '';
+        });
+
+    </script>
+</body>
+</html>
