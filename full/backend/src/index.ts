@@ -31,7 +31,7 @@ app.get("/fetch", async (req, res) => {
 app.get("/fetchAll", async (req, res) => {
     try {
         const result = await user.find({});
-        if(!result){
+        if (!result) {
             res.status(401).json({ message: "No users found" })
             return;
         }
@@ -47,6 +47,11 @@ app.get("/fetchAll", async (req, res) => {
 app.post("/signup", async (req: Request, res: Response) => {
     try {
         const { username, age, email } = req.body;
+        const checkUser = await user.findOne({ username });
+        if (checkUser) {
+            res.status(400).json({ message: "User already exists" })
+            return;
+        }
         const result = await user.create({
             username,
             age,
