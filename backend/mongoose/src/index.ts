@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import mongoose from "mongoose";
 import { user } from "./models/sampleSchema";
 
@@ -10,7 +10,7 @@ mongoose.connect("mongodb://localhost:27017/clgtest1")
     .then(() => { console.log("DB connected") })
     .catch((err: any) => { console.log("Some error"), err })
 
-app.post("/user", async (req, res) => {
+app.post("/user", async (req:Request, res:Response) => {
     try {
         const { username, age, email } = req.body;
         const result = await user.create({
@@ -27,6 +27,22 @@ app.post("/user", async (req, res) => {
     }
 })
 
+
+app.delete("/user", async (req:Request, res:Response) => {
+    const { username } = req.body;
+    try {
+        const result = await user.findOneAndDelete({ username });
+        if (!result) {
+            res.status(400).json({ message: "Couldnt delete user" })
+            return;
+        }
+        res.status(200).json({ message: "User deleted successfully" })
+        return;
+    } catch (error) {
+        res.status(500).json({ message: "Internal server error" })
+        return;
+    }
+})
 
 app.listen(3000, () => {
     console.log("Server running on port 3000");
