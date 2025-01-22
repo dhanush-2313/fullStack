@@ -1,9 +1,17 @@
+import dotenv from "dotenv";
+dotenv.config();
 import express, { Request, Response } from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import { user } from "./models/sampleSchema";
 import bcrypt from "bcryptjs";
 import session from "express-session";
+const dbUrl = process.env.MONGO_URL as string;
+
+if (!dbUrl) {
+    console.error("MONGO_URL is not defined in the environment variables");
+    process.exit(1);
+}
 
 const app = express();
 
@@ -12,7 +20,7 @@ app.use(cors({
     credentials: true,
 }));
 app.use(session({
-    secret: 'DHANUSH123123',
+    secret: `${process.env.SESSION_SECRET}`,
     resave: false,
     saveUninitialized: false,
     cookie: {
@@ -23,7 +31,7 @@ app.use(session({
 }));
 app.use(express.json());
 
-mongoose.connect("mongodb://localhost:27017/jwt")
+mongoose.connect(dbUrl)
     .then(() => { console.log("DB connected"); })
     .catch((err: any) => { console.log("Some error", err); });
 
