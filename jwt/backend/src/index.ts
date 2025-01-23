@@ -8,11 +8,6 @@ import bcrypt from "bcryptjs";
 import session from "express-session";
 const dbUrl = process.env.MONGO_URL as string;
 
-if (!dbUrl) {
-    console.error("MONGO_URL is not defined in the environment variables");
-    process.exit(1);
-}
-
 const app = express();
 
 app.use(cors({
