@@ -24,6 +24,7 @@ app.use(session({
         maxAge: 1000 * 60 * 60, 
     },
 }));
+
 app.use(express.json());
 
 mongoose.connect(dbUrl)
